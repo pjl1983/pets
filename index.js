@@ -1,11 +1,19 @@
 const express = require('express');
-const morgan = require("morgan");
 const path = require('path');
 const app = express();
+const requestIp = require('request-ip');
 const port = 3000;
 
-// set up morgan middleware
-app.use(morgan("combined"));
+
+app.use(requestIp.mw())
+
+app.use(function(req, res,next) {
+  const clientIp = requestIp.getClientIp(req);
+  console.log(clientIp);
+  next();
+});
+
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
