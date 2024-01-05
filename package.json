@@ -1,0 +1,27 @@
+{
+  "name": "pets_house",
+  "version": "1.0.0",
+  "description": "",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines" : {
+    "npm" : ">6.14.13",
+    "node" : "18.14.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjl1983/pets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pjl1983/pets/issues"
+  },
+  "homepage": "https://github.com/pjl1983/pets#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
