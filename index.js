@@ -3,17 +3,18 @@ const path = require('path');
 const app = express();
 const requestIp = require('request-ip');
 const port = 3000;
-
+let IP_ADDRESS = '';
 
 app.use(requestIp.mw())
 
 app.use(function(req, res,next) {
   const clientIp = requestIp.getClientIp(req);
-  console.log(clientIp);
+  if (clientIp != IP_ADDRESS) {
+    IP_ADDRESS = clientIp;
+    console.log(`Your IP address is: ${IP_ADDRESS}`);
+  }
   next();
 });
-
-
 
 app.use(express.static(path.join(__dirname, 'public')));
 
