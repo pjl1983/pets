@@ -9,7 +9,7 @@ app.use(requestIp.mw())
 
 app.use(function(req, res,next) {
   const clientIp = requestIp.getClientIp(req);
-  if (clientIp != IP_ADDRESS) {
+  if (clientIp !== IP_ADDRESS) {
     IP_ADDRESS = clientIp;
     console.log(`Your IP address is: ${IP_ADDRESS}`);
   }
